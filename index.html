@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post | Create a Post</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- BootStrap CSS -->
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center my-4">
+            <h1>Create a Post</h1>
+            <p class="subtittle">Share your thoughts and media</p>
+        </header>
+
+        <!-- Post Creation Form -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <form id="postForm">
+                    <div class="mb-3">
+                        <textarea class="form-control" id="postContent" rows="3" placeholder="What's on your mind?"
+                            required></textarea>
+                    </div>
+
+                    <!-- Media Upload Buttons -->
+                    <div class="mb-3 d-flex flex-wrap gap-2 pt-3">
+                        <button type="button" class="btn btn-sm"
+                            onclick="document.getElementById('imageUpload').click()">
+                            <i class="bi bi-image"></i> Image
+                        </button>
+                        <input type="file" id="imageUpload" accept="image/*" style="display: none;"
+                            onchange="previewMedia(this, 'image')">
+
+                        <button type="button" class="btn btn-sm"
+                            onclick="document.getElementById('videoUpload').click()">
+                            <i class="bi bi-film"></i> Video
+                        </button>
+                        <input type="file" id="videoUpload" accept="video/*" style="display: none;"
+                            onchange="previewMedia(this, 'video')">
+
+                        <button type="button" class="btn btn-sm"
+                            onclick="document.getElementById('fileUpload').click()">
+                            <i class="bi bi-file-earmark"></i> Document
+                        </button>
+                        <input type="file" id="fileUpload" accept=".pdf,.doc,.docx,.xls,.xlsx" style="display: none;"
+                            onchange="previewMedia(this, 'file')">
+
+                        <button type="button" class="btn btn-sm" onclick="getLocation()">
+                            <i class="bi bi-geo-alt"></i> Check In
+                        </button>
+                    </div>
+
+                    <!-- Media Preview -->
+                    <div id="mediaPreview" class="mb-3"></div>
+                    <div id="locationPreview" class="mb-3"></div>
+
+                    <button type="submit" class="btn">Post</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Posts Feed -->
+        <div id="postsFeed">
+            <!-- Posts will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Edit Post -->
+    <div class="modal fade" id="editPostModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editPostForm">
+                        <input type="hidden" id="editPostId">
+                        <div class="mb-3">
+                            <textarea class="form-control" id="editPostContent" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Our JavaScript -->
+    <script src="app.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="bootstrap.js"></script>
+    <!-- Bootstrap Icons JavaScript -->
+    <script src="icons.js"></script>
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
