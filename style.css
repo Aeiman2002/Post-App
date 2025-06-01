@@ -77,7 +77,6 @@ h1{
     background-color: #982425 !important;
     color: antiquewhite !important;
     font-weight: 500 !important;
-    filter: drop-shadow(-6px -2px 20px #982425);
 }
 .btn:hover{
     border: none !important;
