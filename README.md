@@ -7,6 +7,8 @@
 
 A full-featured CRUD application with media uploads and geolocation capabilities built with HTML, CSS, Bootstrap, and JavaScript using localStorage.
 
+🚀 Live Demo: https://aeiman2002.github.io/Post-App/
+  
 - ✨ Key Features
 
 📍 Core Functionality
@@ -34,7 +36,6 @@ A full-featured CRUD application with media uploads and geolocation capabilities
 
 ⚡ Optimized Performance for media handling
 
-- 🚀 Live Demo: https://aeiman2002.github.io/Post-App/
 
 🛠️ Tech Stack
 
